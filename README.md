@@ -1,7 +1,9 @@
-mpioip
+[![Build Status](https://travis-ci.org/kstaniek/pampio.svg?branch=master)](https://travis-ci.org/kstaniek/pampio)
 
-Ampio IP Client
+# Python AMPIO Home Server Client
 
-Required Python 3.5
+Python Client to AMPIO Home Server
+
+Requires Python 3.4/3.5
 
 
