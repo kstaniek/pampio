@@ -1,5 +1,5 @@
 flake8==3.3.0
 pylint==1.7.1
-pydocstyle
+pydocstyle==2.0.0
 pytest
 pytest-cov
