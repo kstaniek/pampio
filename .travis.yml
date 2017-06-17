@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.4"
+  - "3.5"
+install:
+  - pip install tox
+script:
+  - tox
+deploy:
+  provider: pypi
+  user: kstaniek
+  password:
+    secure: SccepP/QiYK9nAV79DUMKrhmj5XSnSfnM5yrmKVFuJ3nuZ0Y98mBIfSwYTdtbFym1oXsYBvMWjP2WRmK4/aPejALPFGHrJCLwBdX4fX20PnRWYoyb6eHgsNb4tBtmVWcYHS4+4BF1ADirnw01PDd6gE6F4vvlGC6OVhdy8xIQ2hmvd/PZHM7V7RedscyC1kU4Qtyc/7GJdVWf6rgRkiZdttAmcuex8PFoaCamH7A5N3i6ZaxSlj4LHhMN9HY9SqrFEWViqEl1ST8VHTVYkcrvwwHyzhod6ijkUfBljfCsd7CBCLurBB3PXufVL9d58k6xtQ6n5j++oA08VxetfE5qId9ffircaSGgpPLPF01HxeBHAneXjWGctNBgOgWdST/sNWsAbsFdKNIO/5k32EDxwWQYeifJGrxyOvVUqKmAm6KCLS6VcUKpdkoRp2d1oClfcZQxZqEh81Wcqaerua/XOzbljjOeFD4GfB8+SjOuVg3H8gy+MLm0wzetvf9mVagEJ0zGPQYUNivWtjhoyKlLeBfoxJghHAsjrU6zVAxs+5vgYj1/q5m4uHh6W0JhIAC3axDPHBskyrV84K2C8CUoir+UEsqgYtYeuQ5ohPNVlXxhX+OXArCRKxjiqN6TQHP6wtxNuGdx90+iq7bbmfetLSgtVrXQFEjZpaTNwhPDMI=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: kstaniek/pampio
+  skip_upload_docs: true
