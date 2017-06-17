@@ -1,18 +1,31 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
+- '3.4'
+- '3.5'
 install:
-  - pip install tox
+- pip install tox
 script:
-  - tox
+- tox
 deploy:
-  provider: pypi
-  user: kstaniek
-  password:
-    secure: SccepP/QiYK9nAV79DUMKrhmj5XSnSfnM5yrmKVFuJ3nuZ0Y98mBIfSwYTdtbFym1oXsYBvMWjP2WRmK4/aPejALPFGHrJCLwBdX4fX20PnRWYoyb6eHgsNb4tBtmVWcYHS4+4BF1ADirnw01PDd6gE6F4vvlGC6OVhdy8xIQ2hmvd/PZHM7V7RedscyC1kU4Qtyc/7GJdVWf6rgRkiZdttAmcuex8PFoaCamH7A5N3i6ZaxSlj4LHhMN9HY9SqrFEWViqEl1ST8VHTVYkcrvwwHyzhod6ijkUfBljfCsd7CBCLurBB3PXufVL9d58k6xtQ6n5j++oA08VxetfE5qId9ffircaSGgpPLPF01HxeBHAneXjWGctNBgOgWdST/sNWsAbsFdKNIO/5k32EDxwWQYeifJGrxyOvVUqKmAm6KCLS6VcUKpdkoRp2d1oClfcZQxZqEh81Wcqaerua/XOzbljjOeFD4GfB8+SjOuVg3H8gy+MLm0wzetvf9mVagEJ0zGPQYUNivWtjhoyKlLeBfoxJghHAsjrU6zVAxs+5vgYj1/q5m4uHh6W0JhIAC3axDPHBskyrV84K2C8CUoir+UEsqgYtYeuQ5ohPNVlXxhX+OXArCRKxjiqN6TQHP6wtxNuGdx90+iq7bbmfetLSgtVrXQFEjZpaTNwhPDMI=
-  on:
-    tags: true
-    distributions: sdist bdist_wheel
-    repo: kstaniek/pampio
-  skip_upload_docs: true
+  - provider: pypi
+    server: https://upload.pypi.org/legacy/
+    user: kstaniek
+    password:
+      secure: SccepP/QiYK9nAV79DUMKrhmj5XSnSfnM5yrmKVFuJ3nuZ0Y98mBIfSwYTdtbFym1oXsYBvMWjP2WRmK4/aPejALPFGHrJCLwBdX4fX20PnRWYoyb6eHgsNb4tBtmVWcYHS4+4BF1ADirnw01PDd6gE6F4vvlGC6OVhdy8xIQ2hmvd/PZHM7V7RedscyC1kU4Qtyc/7GJdVWf6rgRkiZdttAmcuex8PFoaCamH7A5N3i6ZaxSlj4LHhMN9HY9SqrFEWViqEl1ST8VHTVYkcrvwwHyzhod6ijkUfBljfCsd7CBCLurBB3PXufVL9d58k6xtQ6n5j++oA08VxetfE5qId9ffircaSGgpPLPF01HxeBHAneXjWGctNBgOgWdST/sNWsAbsFdKNIO/5k32EDxwWQYeifJGrxyOvVUqKmAm6KCLS6VcUKpdkoRp2d1oClfcZQxZqEh81Wcqaerua/XOzbljjOeFD4GfB8+SjOuVg3H8gy+MLm0wzetvf9mVagEJ0zGPQYUNivWtjhoyKlLeBfoxJghHAsjrU6zVAxs+5vgYj1/q5m4uHh6W0JhIAC3axDPHBskyrV84K2C8CUoir+UEsqgYtYeuQ5ohPNVlXxhX+OXArCRKxjiqN6TQHP6wtxNuGdx90+iq7bbmfetLSgtVrXQFEjZpaTNwhPDMI=
+    on:
+      tags: true
+      distributions: sdist bdist_wheel
+      repo: kstaniek/pampio
+      python: 3.4
+
+    skip_upload_docs: true
+
+  - provider: releases
+    api_key:
+      secure: tWl8WrCIlyylCRIoW8d+JnJqoQMSl9Jx6YyD9U+nXjn28XA9ZNd5AtjxH7xfjN7TG+TipMdhQKWaXoOhTRGxZfF0+CnQ7We/+3KvZZw7JigSwB2UzeMWnv+cHwXrsF9GF8MrGtYeU4qs+l7qgeKBKJ82jPp/HcoX9FCKVGXrFp7aOWVhf2naJwlX3c2FhMPQw7m8BGxL5dCSWrFyt2FHDCNKTpxq74nU2mXWszaYFYrnwxA7oPhJSadZ7cHVaHP83MnytXsvzRi6TPAghsNNWeEqyBwmMakN1rQAGVf6zpoeEzegfi3DkhyMSqvjsVlkq2v9a8VyEKLjeFkKqSq88XDYTTiVZJ4iHhb4Wq/ONDQ3T0nRrrHtw3NuWxRx8ow8/G6yecIpzbcNWNykJ1cwFaankXWXd5GmR2n53LLMj+pohMHEpisPVfJAtuKyfLCr5l5VQgsoQfkqB4WV0refgWKOPtuxPF+YXXemAWW+lGndbEps+FtJWTXlUozhNnOUi7RnoDBqZrWp70tPbema+kUsEIDacC6KjBsr5rvfHvhJrLUA+bZ+itzVvrSCILYR74vitjIkNRgMmVhhoEyCKU9K6WeWHY1MmaK6FMvyOJmxPuGBlFZFJXsxUKgKt/UUKG+9uNBtU4UrBz9cjlulcKrTX8YkAVRg6eeesaqXSMI=
+    file: ''
+    on:
+      tags: true
+      repo: kstaniek/pampio
+      python: 3.4
+
