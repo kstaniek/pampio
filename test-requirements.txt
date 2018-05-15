@@ -1,5 +1,5 @@
 flake8
-pylint
+pylint==1.9.0
 pydocstyle
 pytest
 pytest-cov
