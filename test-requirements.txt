@@ -1,5 +1,5 @@
 flake8
 pylint
 pydocstyle
-pytest
+pytest==3.7.1
 pytest-cov
