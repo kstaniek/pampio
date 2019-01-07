@@ -2,4 +2,4 @@ flake8
 pylint
 pydocstyle
 pytest
-pytest-cov
+pytest-cov==2.6.1
